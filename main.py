@@ -16,9 +16,6 @@ def process_file_input(directory: directory.Directory, filename: str) -> None:
                 print(stripped)
                 words = stripped.split(' ')
                 command = words[0].strip()
-
-                #DEBUG
-                #print(words)
                 
                 if command == 'CREATE':
                     if len(words) != 2:
@@ -53,12 +50,7 @@ def main(args):
     text_command = []
 
     for command in args:
-
-        #Processing commands within a text file
-        if '.txt' in command:
-            process_file_input(dir, command)
-        else:
-            pass
+        process_file_input(dir, command)
 
 if __name__ == '__main__':
     main(sys.argv[1:])
